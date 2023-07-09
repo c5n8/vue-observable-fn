@@ -2,6 +2,16 @@
   "name": "vue-observable-fn",
   "version": "0.1.1",
   "description": "Vue observable function",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/c5n8/vue-observable-fn.git"
+  },
+  "author": "c5n8",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/c5n8/vue-observable-fn/issues"
+  },
+  "homepage": "https://github.com/c5n8/vue-observable-fn#readme",
   "type": "module",
   "files": [
     "dist"
