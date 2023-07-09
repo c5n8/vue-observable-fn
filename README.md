@@ -3,7 +3,7 @@
 Example
 
 ```vue
-<script setup lang="ts">
+<script setup>
 import { useObservableFn } from 'vue-observable-fn'
 
 const [submit, submission] = useObservableFn(async (foo, bar) => {
