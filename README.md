@@ -6,12 +6,16 @@ Example
 <script setup lang="ts">
 import { useObservableFn } from 'vue-observable-fn'
 
-const [submit, submission] = useObservableFn(async (foo: number, bar: string) => {
-  await new Promise((resolve) => setTimeout(resolve, 1000))
-  // await new Promise((resolve, reject) => setTimeout(() => reject(new Error('failed')), 1000))
+const [submit, submission] = useObservableFn(
+  async (foo: number, bar: string) => {
+    await new Promise((resolve) => setTimeout(resolve, 1000))
+    // await new Promise((resolve, reject) =>
+    //   setTimeout(() => reject(new Error('failed')), 1000),
+    // )
 
-  return { foo, bar }
-})
+    return { foo, bar }
+  },
+)
 </script>
 
 <template>

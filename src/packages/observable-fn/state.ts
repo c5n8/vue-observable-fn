@@ -1,7 +1,9 @@
 import { computed, reactive } from 'vue'
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-export function useObservableFnState<Fn extends (...args: any[]) => Promise<any>>(fn: Fn) {
+export function useObservableFnState<
+  Fn extends (...args: any[]) => Promise<any>,
+>(fn: Fn) {
   const state: ObservableFnState<Fn> = reactive({
     status: 'standby',
     result: undefined,
@@ -16,7 +18,9 @@ export function useObservableFnState<Fn extends (...args: any[]) => Promise<any>
   return state
 }
 
-export interface ObservableFnState<Fn extends (...args: any[]) => Promise<any>> {
+export interface ObservableFnState<
+  Fn extends (...args: any[]) => Promise<any>,
+> {
   status: 'standby' | 'pending' | 'fulfilled' | 'rejected'
   result?: Awaited<ReturnType<Fn>>
   error?: unknown

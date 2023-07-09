@@ -1,7 +1,9 @@
 import { readonly } from 'vue'
 import { useObservableFnState } from './state'
 
-export function useObservableFn<Fn extends (...args: any[]) => Promise<any>>(fn: Fn) {
+export function useObservableFn<Fn extends (...args: any[]) => Promise<any>>(
+  fn: Fn,
+) {
   const state = useObservableFnState(fn)
 
   let lastPromise
@@ -34,5 +36,8 @@ export function useObservableFn<Fn extends (...args: any[]) => Promise<any>>(fn:
     return result
   }
 
-  return [observableFn, readonly(state)] as [Fn, ReturnType<typeof readonly<typeof state>>]
+  return [observableFn, readonly(state)] as [
+    Fn,
+    ReturnType<typeof readonly<typeof state>>,
+  ]
 }

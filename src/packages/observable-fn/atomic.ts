@@ -1,12 +1,16 @@
 import { readonly } from 'vue'
 import { useObservableFnState } from './state'
 
-export function useAtomicObservableFn<Fn extends (...args: any[]) => Promise<any>>(fn: Fn) {
+export function useAtomicObservableFn<
+  Fn extends (...args: any[]) => Promise<any>,
+>(fn: Fn) {
   const state = useObservableFnState(fn)
 
   async function observableFn(...args: any[]) {
     if (state.isPending) {
-      throw new AtomicFunctionError('Cannot call atomic function while it is pending')
+      throw new AtomicFunctionError(
+        'Cannot call atomic function while it is pending',
+      )
     }
 
     state.status = 'pending'
@@ -30,7 +34,10 @@ export function useAtomicObservableFn<Fn extends (...args: any[]) => Promise<any
     return result
   }
 
-  return [observableFn, readonly(state)] as [Fn, ReturnType<typeof readonly<typeof state>>]
+  return [observableFn, readonly(state)] as [
+    Fn,
+    ReturnType<typeof readonly<typeof state>>,
+  ]
 }
 
 class AtomicFunctionError extends Error {
