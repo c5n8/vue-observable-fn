@@ -12,6 +12,11 @@
     "url": "https://github.com/c5n8/vue-observable-fn/issues"
   },
   "homepage": "https://github.com/c5n8/vue-observable-fn#readme",
+  "keywords": [
+    "vue",
+    "observable",
+    "fn"
+  ],
   "type": "module",
   "files": [
     "dist"
