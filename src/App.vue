@@ -1,16 +1,11 @@
-<script setup lang="ts">
+<script setup>
 import { useObservableFn } from '@/packages/observable-fn'
 
-const [submit, submission] = useObservableFn(
-  async (foo: number, bar: string) => {
-    await new Promise((resolve) => setTimeout(resolve, 1000))
-    // await new Promise((resolve, reject) =>
-    //   setTimeout(() => reject(new Error('failed')), 1000),
-    // )
+const [submit, submission] = useObservableFn(async (foo, bar) => {
+  await new Promise((resolve) => setTimeout(resolve, 1000))
 
-    return { foo, bar }
-  },
-)
+  return { foo, bar }
+})
 </script>
 
 <template>
