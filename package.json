@@ -21,12 +21,12 @@
   "files": [
     "dist"
   ],
-  "main": "./dist/vue-observable-fn.umd.cjs",
-  "module": "./dist/vue-observable-fn.js",
+  "main": "./dist/index.umd.cjs",
+  "module": "./dist/index.js",
   "exports": {
     ".": {
-      "import": "./dist/vue-observable-fn.js",
-      "require": "./dist/vue-observable-fn.umd.cjs"
+      "import": "./dist/index.js",
+      "require": "./dist/index.umd.cjs"
     }
   },
   "scripts": {
